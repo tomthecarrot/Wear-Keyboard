@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyActivity"
+    tools:deviceIds="wear_round"
+    android:background="#dddddd">
+
+    <Button
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+
+        android:id="@+id/backspace"
+        android:text="&lt;"
+        android:layout_below="@+id/capital"
+        android:layout_toEndOf="@+id/numbers"
+        android:textSize="20sp" />
+
+    <EditText
+        android:layout_width="140dp"
+        android:layout_height="60dp"
+        android:background="#00000000"
+        android:hint="write text"
+        android:id="@+id/textedit"
+        android:ellipsize="end"
+        android:textColor="@android:color/black"
+        android:textColorHint="#55000000"
+        android:layout_below="@+id/backspace"
+        android:layout_marginTop="5dp"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/send"
+        android:paddingLeft="15dp" />
+
+    <Button
+        android:layout_width="55dp"
+        android:layout_height="60dp"
+        android:layout_alignTop="@id/textedit"
+        android:id="@+id/send"
+        android:text=">"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/space"
+        android:text="__"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/backspace" />
+
+    <Button
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/numbers"
+        android:text="123"
+        android:textSize="8sp"
+        android:layout_marginStart="45dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_toRightOf="@id/numbers"
+        android:id="@+id/capital"
+        android:text="^"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollview"
+        android:scrollbarAlwaysDrawHorizontalTrack="true"
+        android:layout_below="@id/textedit">
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:id="@+id/scroll" />
+    </ScrollView>
+
+</RelativeLayout>
