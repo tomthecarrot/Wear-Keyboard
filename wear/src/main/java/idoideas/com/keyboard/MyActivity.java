@@ -22,6 +22,7 @@ import java.util.ArrayList;
  * This code is Open Source and free to use.
  */
 public class MyActivity extends Activity implements View.OnClickListener {
+    static int maxKeys = 5; // maximum amount of keys on a line
     static EditText editText;
     static Button del, space, num, cap, OK;
     RelativeLayout Scroll;
@@ -60,11 +61,11 @@ public class MyActivity extends Activity implements View.OnClickListener {
             float px = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 40, r.getDisplayMetrics());
             RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams((int) px, (int) px);
             if (i > 0){
-                if (i%4 != 0) {
-                    if (i < 4) {
+                if (i % maxKeys != 0) {
+                    if (i < maxKeys) {
                         lp.addRule(RelativeLayout.BELOW, R.id.textedit);}
                     else{
-                        lp.addRule(RelativeLayout.BELOW, buttons.get(i-4).getId());
+                        lp.addRule(RelativeLayout.BELOW, buttons.get(i-maxKeys).getId());
                     }
                     if (i == 1) {
                         lp.setMargins((int) px, lp.topMargin, lp.rightMargin, lp.bottomMargin);
