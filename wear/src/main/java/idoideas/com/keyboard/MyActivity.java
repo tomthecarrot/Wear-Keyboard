@@ -2,6 +2,7 @@ package idoideas.com.keyboard;
 
 import android.app.Activity;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.wearable.view.WatchViewStub;
@@ -51,6 +52,7 @@ public class MyActivity extends Activity implements View.OnClickListener {
     public void setKeyboardCharacters(String Characters){
         for (int i = 0; i<Characters.length();i++){
             Button b = new Button(getApplicationContext());
+            b.setAlpha(0.5f); // light theme
             b.setId(i);
             buttons.add(b);
             Button currentButton = buttons.get(i);
