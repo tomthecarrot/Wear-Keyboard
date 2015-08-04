@@ -45,7 +45,7 @@ public class MyActivity extends Activity implements View.OnClickListener {
         Vibrator vi = (Vibrator) getApplicationContext().getSystemService(VIBRATOR_SERVICE);
         vi.vibrate(50);
         Button button = (Button) v;
-        editText.setText(editText.getText()+""+button.getText());
+        editText.setText(editText.getText() + "" + button.getText());
     }
     
     public void setKeyboardCharacters(String Characters){
@@ -56,19 +56,19 @@ public class MyActivity extends Activity implements View.OnClickListener {
             Button currentButton = buttons.get(i);
             Resources r = getResources();
             float px = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 40, r.getDisplayMetrics());
-            RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams((int) px,(int) px);
+            RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams((int) px, (int) px);
             if (i > 0){
                 if (i%4 != 0) {
                     if (i < 4) {
-                        lp.addRule(RelativeLayout.BELOW,R.id.textedit);}
+                        lp.addRule(RelativeLayout.BELOW, R.id.textedit);}
                     else{
-                        lp.addRule(RelativeLayout.BELOW,buttons.get(i-4).getId());
+                        lp.addRule(RelativeLayout.BELOW, buttons.get(i-4).getId());
                     }
                     if (i == 1) {
-                        lp.setMargins((int) px,lp.topMargin,lp.rightMargin,lp.bottomMargin);
+                        lp.setMargins((int) px, lp.topMargin, lp.rightMargin, lp.bottomMargin);
                     }
                     else{
-                        lp.addRule(RelativeLayout.RIGHT_OF,buttons.get(i-1).getId());
+                        lp.addRule(RelativeLayout.RIGHT_OF, buttons.get(i-1).getId());
                     }
                 }
                 else{
@@ -80,14 +80,14 @@ public class MyActivity extends Activity implements View.OnClickListener {
             }
 
             currentButton.setLayoutParams(lp);
-            currentButton.setText(Characters.charAt(i)+"");
+            currentButton.setText(Characters.charAt(i) + "");
             currentButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Vibrator vi = (Vibrator) getApplicationContext().getSystemService(VIBRATOR_SERVICE);
                     vi.vibrate(50);
                     Button button = (Button) v;
-                    editText.setText(editText.getText()+""+button.getText());
+                    editText.setText(editText.getText() + "" + button.getText());
 
                 }
             });
